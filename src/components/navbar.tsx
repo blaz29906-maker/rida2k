@@ -26,7 +26,7 @@ export function Navbar() {
     return (
         <>
             <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
-                <div className="container flex h-16 items-center justify-between">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex h-16 items-center justify-between">
                     <Link href="/" className="flex items-center space-x-2 font-display text-xl font-bold tracking-tight">
                         <span>RIDA KANWAL</span>
                     </Link>

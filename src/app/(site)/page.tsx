@@ -56,7 +56,7 @@ export default function HomePage() {
 
                         <div className="relative w-full h-full max-w-[600px] max-h-[800px] rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-700 delay-300 border border-border/50 bg-muted/20 backdrop-blur-sm">
                             <Image
-                                src="/hero-image.png"
+                                src="/hero-new.jpg"
                                 alt="Rida Kanwal"
                                 fill
                                 className="object-cover object-center"
