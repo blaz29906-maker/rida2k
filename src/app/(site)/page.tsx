@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className="flex flex-col">
             {/* Hero */}
             <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden pt-16">
-                <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div className="w-full max-w-7xl mx-auto px-6 md:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
                     <div className="flex flex-col items-start gap-8 z-20">
                         <h1 className="font-display text-6xl font-bold leading-none tracking-tighter md:text-[6rem] lg:text-[7rem] animate-in fade-in slide-in-from-bottom-10 duration-500">
                             CREATIVE
