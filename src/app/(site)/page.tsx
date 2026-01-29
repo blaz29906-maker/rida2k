@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Section } from "@/components/section";
 import { profile, projects, blogPosts, services } from "@/data/profile";
 import { ArrowRight, Download, ExternalLink } from "lucide-react";
+import Image from "next/image";
+
 // Button import removed as we use Link with utility classes
 
 // I'll use raw tailwind for buttons to avoid shadcn setup overhead if I haven't done it, 
@@ -12,44 +14,60 @@ export default function HomePage() {
         <div className="flex flex-col">
             {/* Hero */}
             <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden pt-16">
-                <div className="container relative z-10 flex flex-col items-start gap-8">
-                    <h1 className="font-display text-6xl font-bold leading-none tracking-tighter md:text-[8rem] lg:text-[10rem] animate-in fade-in slide-in-from-bottom-10 duration-500">
-                        CREATIVE
-                        <br />
-                        <span className="text-muted-foreground">AGENCY.</span>
-                        {/* Wait, user title is Creative Technologist. Let's use that. */}
-                        <span className="hidden">Technologist</span>
-                    </h1>
-                    {/* Revised Hero Text based on Brand Vibe */}
-                    <div className="flex flex-col gap-2">
-                        <h1 className="font-display text-6xl font-bold leading-none tracking-tighter md:text-8xl lg:text-9xl">
-                            RIDA KANWAL
+                <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div className="flex flex-col items-start gap-8 z-20">
+                        <h1 className="font-display text-6xl font-bold leading-none tracking-tighter md:text-[6rem] lg:text-[7rem] animate-in fade-in slide-in-from-bottom-10 duration-500">
+                            CREATIVE
+                            <br />
+                            <span className="text-muted-foreground">AGENCY.</span>
+                            <span className="hidden">Technologist</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mt-4">
-                            {profile.title}.<br />
-                            Building premium digital experiences at the intersection of AI, Design, and Web3.
-                        </p>
+                        <div className="flex flex-col gap-2">
+                            <h1 className="font-display text-6xl font-bold leading-none tracking-tighter md:text-8xl lg:text-9xl hidden">
+                                RIDA KANWAL
+                            </h1>
+                            <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-xl mt-4">
+                                {profile.title}.<br />
+                                Building premium digital experiences at the intersection of AI, Design, and Web3.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 mt-8">
+                            <Link
+                                href="/contact"
+                                className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            >
+                                Start a Project
+                            </Link>
+                            <Link
+                                href="/resume"
+                                className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-8 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                            >
+                                <Download className="mr-2 h-4 w-4" />
+                                Download Resume
+                            </Link>
+                        </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4 mt-8">
-                        <Link
-                            href="/contact"
-                            className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                        >
-                            Start a Project
-                        </Link>
-                        <Link
-                            href="/resume" // Or direct download logic
-                            className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-8 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                        >
-                            <Download className="mr-2 h-4 w-4" />
-                            Download Resume
-                        </Link>
+                    <div className="relative h-[600px] w-full md:h-[800px] flex items-center justify-center z-10">
+                        {/* Circle Background */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl scale-90 md:scale-100" />
+
+                        <div className="relative w-full h-full max-w-[600px] max-h-[800px] rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-700 delay-300 border border-border/50 bg-muted/20 backdrop-blur-sm">
+                            <Image
+                                src="/hero-image.png"
+                                alt="Rida Kanwal"
+                                fill
+                                className="object-cover object-center"
+                                priority
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                        </div>
                     </div>
                 </div>
 
                 {/* Abstract BG elements */}
-                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
             </section>
 
             {/* About / Intro */}
