@@ -18,11 +18,11 @@ export default function ResumePage() {
                         <p className="text-xl text-muted-foreground text-foreground max-w-2xl">{profile.summary}</p>
                     </div>
                     <a
-                        href="/Rida-Kanwal-Resume.pdf"
-                        download
+                        href="/Rida-Kanwal-Resume.png"
+                        download="Rida-Kanwal-Resume.png"
                         className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:scale-105"
                     >
-                        <Download className="mr-2 h-4 w-4" /> Download PDF
+                        <Download className="mr-2 h-4 w-4" /> Download Resume
                     </a>
                 </div>
 

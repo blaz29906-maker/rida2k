@@ -39,13 +39,14 @@ export default function HomePage() {
                             >
                                 Start a Project
                             </Link>
-                            <Link
-                                href="/resume"
+                            <a
+                                href="/Rida-Kanwal-Resume.png"
+                                download="Rida-Kanwal-Resume.png"
                                 className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-8 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                             >
                                 <Download className="mr-2 h-4 w-4" />
                                 Download Resume
-                            </Link>
+                            </a>
                         </div>
                     </div>
 
